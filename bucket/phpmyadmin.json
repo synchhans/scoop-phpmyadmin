@@ -9,18 +9,26 @@
     "persist": [
         "config.inc.php"
     ],
-    "bin": "phpmyadmin.ps1",
     "suggest": {
         "php": "php"
     },
+    "pre_install": [
+        "$script = @'\nparam([string]$cmd)\n\n$port = 8080\n\nswitch ($cmd) {\n    \"start\" {\n        Write-Host \"Starting phpMyAdmin at http://localhost:$port\"\n        Start-Process php -ArgumentList \"-S localhost:$port\" -WorkingDirectory \"$PSScriptRoot\"\n    }\n\n    \"stop\" {\n        Get-Process php -ErrorAction SilentlyContinue | Stop-Process -Force\n        Write-Host \"phpMyAdmin stopped\"\n    }\n\n    \"open\" {\n        Start-Process \"http://localhost:$port\"\n    }\n\n    default {\n        Write-Host \"phpMyAdmin Scoop Manager\"\n        Write-Host \"\"\n        Write-Host \"Usage:\"\n        Write-Host \"  phpmyadmin start   Start phpMyAdmin\"\n        Write-Host \"  phpmyadmin stop    Stop phpMyAdmin\"\n        Write-Host \"  phpmyadmin open    Open browser\"\n    }\n}\n'@\nSet-Content \"$dir\\phpmyadmin.ps1\" $script"
+    ],
+    "bin": "phpmyadmin.ps1",
     "notes": [
-        "Run phpMyAdmin using:",
+        "phpMyAdmin installed successfully!",
+        "",
+        "Start phpMyAdmin:",
         "  phpmyadmin start",
         "",
-        "Stop phpmyadmin:",
+        "Stop phpMyAdmin:",
         "  phpmyadmin stop",
         "",
-        "Open in browser:",
+        "Open browser:",
+        "  phpmyadmin open",
+        "",
+        "Default URL:",
         "  http://localhost:8080"
     ]
 }
