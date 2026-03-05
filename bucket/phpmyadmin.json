@@ -9,13 +9,15 @@
     "persist": [
         "config.inc.php"
     ],
+    "bin": "phpmyadmin.ps1",
     "suggest": {
         "php": "php"
     },
     "notes": [
-        "To run phpMyAdmin:",
-        "  cd $dir",
-        "  php -S localhost:8080",
-        "Then open http://localhost:8080 in your browser."
+        "Run phpMyAdmin using:",
+        "  phpmyadmin",
+        "",
+        "Default URL:",
+        "  http://localhost:8080"
     ]
 }

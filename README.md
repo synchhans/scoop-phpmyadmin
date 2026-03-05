@@ -1,22 +1,22 @@
 # Scoop phpMyAdmin Bucket
 
-This repository provides a Scoop bucket for installing **phpMyAdmin** easily on Windows.
+Install **phpMyAdmin** easily on Windows using **Scoop**.
 
-phpMyAdmin is a free and open-source web-based administration tool for MySQL and MariaDB.
+phpMyAdmin is a web-based administration tool for MySQL and MariaDB.
 
 Official website: https://www.phpmyadmin.net/
 
 ---
 
-## Requirements
+# Requirements
 
-Before installing phpMyAdmin, make sure the following are installed:
+Make sure you already have the following installed:
 
-* PHP
-* MySQL / MariaDB
 * Scoop
+* PHP
+* MySQL or MariaDB
 
-Example installation:
+Example:
 
 ```powershell
 scoop install php
@@ -25,9 +25,9 @@ scoop install mysql
 
 ---
 
-## Add this bucket
+# Add Bucket
 
-Run the following command:
+Add this repository as a Scoop bucket:
 
 ```powershell
 scoop bucket add phpmyadmin https://github.com/synchhans/scoop-phpmyadmin
@@ -35,13 +35,13 @@ scoop bucket add phpmyadmin https://github.com/synchhans/scoop-phpmyadmin
 
 ---
 
-## Install phpMyAdmin
+# Install phpMyAdmin
 
 ```powershell
 scoop install phpmyadmin
 ```
 
-After installation, phpMyAdmin will be located in:
+Scoop will install phpMyAdmin into:
 
 ```
 ~/scoop/apps/phpmyadmin/current
@@ -49,16 +49,21 @@ After installation, phpMyAdmin will be located in:
 
 ---
 
-## Running phpMyAdmin
+# Run phpMyAdmin
 
-Navigate to the installation directory and start the PHP built-in server:
+Simply run:
 
 ```powershell
-cd ~/scoop/apps/phpmyadmin/current
-php -S localhost:8080
+phpmyadmin
 ```
 
-Then open your browser:
+This will:
+
+* Start the PHP built-in web server
+* Serve the phpMyAdmin directory
+* Automatically open your browser
+
+Default URL:
 
 ```
 http://localhost:8080
@@ -66,31 +71,30 @@ http://localhost:8080
 
 ---
 
-## Configuration
+# Configuration
 
-Rename the sample configuration file:
-
-```
-config.sample.inc.php
-```
-
-to:
+If needed, create a configuration file:
 
 ```
 config.inc.php
 ```
 
-Then edit it and set a secret key:
+Example minimal configuration:
 
 ```php
-$cfg['blowfish_secret'] = 'your-secret-key';
+<?php
+$cfg['blowfish_secret'] = 'random-secret-key';
+$i = 0;
+$i++;
+$cfg['Servers'][$i]['host'] = 'localhost';
+$cfg['Servers'][$i]['auth_type'] = 'cookie';
 ```
 
 ---
 
-## Updating
+# Update phpMyAdmin
 
-To update phpMyAdmin via Scoop:
+Update using Scoop:
 
 ```powershell
 scoop update phpmyadmin
@@ -98,7 +102,7 @@ scoop update phpmyadmin
 
 ---
 
-## Uninstall
+# Uninstall
 
 ```powershell
 scoop uninstall phpmyadmin
@@ -106,7 +110,19 @@ scoop uninstall phpmyadmin
 
 ---
 
-## License
+# Repository Structure
+
+```
+scoop-phpmyadmin
+ ├─ bucket
+ │   ├─ phpmyadmin.json
+ │   └─ phpmyadmin.ps1
+ └─ README.md
+```
+
+---
+
+# License
 
 phpMyAdmin is licensed under the GNU General Public License (GPL).
 
