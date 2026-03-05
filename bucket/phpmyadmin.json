@@ -1,6 +1,6 @@
 {
     "version": "5.2.1",
-    "description": "phpMyAdmin - MySQL web administration tool",
+    "description": "phpMyAdmin - Web-based MySQL administration tool",
     "homepage": "https://www.phpmyadmin.net/",
     "license": "GPL-2.0",
     "url": "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip",
@@ -10,6 +10,12 @@
         "config.inc.php"
     ],
     "suggest": {
-        "PHP": "php"
-    }
+        "php": "php"
+    },
+    "notes": [
+        "To run phpMyAdmin:",
+        "  cd $dir",
+        "  php -S localhost:8080",
+        "Then open http://localhost:8080 in your browser."
+    ]
 }
