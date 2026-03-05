@@ -15,9 +15,12 @@
     },
     "notes": [
         "Run phpMyAdmin using:",
-        "  phpmyadmin",
+        "  phpmyadmin start",
         "",
-        "Default URL:",
+        "Stop phpmyadmin:",
+        "  phpmyadmin stop",
+        "",
+        "Open in browser:",
         "  http://localhost:8080"
     ]
 }
