@@ -1,0 +1,15 @@
+{
+    "version": "5.2.1",
+    "description": "phpMyAdmin - MySQL web administration tool",
+    "homepage": "https://www.phpmyadmin.net/",
+    "license": "GPL-2.0",
+    "url": "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip",
+    "hash": "skip",
+    "extract_dir": "phpMyAdmin-5.2.1-all-languages",
+    "persist": [
+        "config.inc.php"
+    ],
+    "suggest": {
+        "PHP": "php"
+    }
+}
