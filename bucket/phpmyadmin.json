@@ -4,7 +4,7 @@
     "homepage": "https://www.phpmyadmin.net/",
     "license": "GPL-2.0",
     "url": "https://files.phpmyadmin.net/phpMyAdmin/5.2.1/phpMyAdmin-5.2.1-all-languages.zip",
-    "hash": "skip",
+    "hash": "31c95fe5c00e0f899b5d31ac6fff506cf8061f2f746e9d7084c395f47451946e",
     "extract_dir": "phpMyAdmin-5.2.1-all-languages",
     "persist": [
         "config.inc.php"
